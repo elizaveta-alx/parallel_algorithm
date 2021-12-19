@@ -20,13 +20,13 @@ int countNumberOfWords(string sentence) {
 }
 
 
-int main(){
-    string sentence;
-    cout << "Enter the sentence : ";
-    getline(cin, sentence);
-
-    int numberOfWords = countNumberOfWords(sentence);
-    cout << "The number of words in the sentence is : " << numberOfWords << endl;
-
+int main(int argc, char* argv[]) {
+    if (argc > 1) {
+        int numberOfWords = countNumberOfWords(argv[1]);
+        cout << "The number of words in the sentence is : " << numberOfWords << endl;
+    }
+    else {
+        cout << "The number of words in the sentence is : 0";
+    }
     return 0;
 }
